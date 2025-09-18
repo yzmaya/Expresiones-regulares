@@ -4,7 +4,7 @@ Correo: juan.perez@universidad.mx
 Teléfono: 442-123-4567
 
 María López
-Matrícula: 2024-ING-0220
+Matrícula: 2024-ING-0225
 Correo: maria_lopez_2024@universidad.edu
 Teléfono: 442.234.5678
 
@@ -14,6 +14,6 @@ Correo: r.garcia@universidad.com
 Teléfono: 442 345 67 89
 
 Ana Gómez
-Matrícula: 2024-ARQ-0150
+Matrícula: 2024-ARQ-01503
 Correo: anagomez@universidad.mx
 Teléfono: 442-987-6543
