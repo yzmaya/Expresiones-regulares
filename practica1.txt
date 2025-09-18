@@ -1,0 +1,19 @@
+Juan Perez
+Matrícula: 2023-ARQ-0105
+Correo: juan.perez@universidad.mx
+Teléfono: 442-123-4567
+
+María López
+Matrícula: 2024-ING-0220
+Correo: maria_lopez_2024@universidad.edu
+Teléfono: 442.234.5678
+
+Roberto García
+Matrícula: 2023-ART-0088
+Correo: r.garcia@universidad.com
+Teléfono: 442 345 67 89
+
+Ana Gómez
+Matrícula: 2024-ARQ-0150
+Correo: anagomez@universidad.mx
+Teléfono: 442-987-6543
