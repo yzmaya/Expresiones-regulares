@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Validación</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+.success-message {
+    color: #28a745;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    display: none;
+}
+</style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Registro de Usuario</h2>
+        <form id="registroForm">
+            <div class="form-group">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                <span class="error-message" id="nombreError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="Ej: correo@ejemplo.com" required>
+                <span class="error-message" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                <span class="error-message" id="edadError"></span>
+            </div>
+
+            <button type="submit">Enviar</button>
+            <p class="success-message" id="successMessage"></p>
+        </form>
+    </div>
+
+    <script>
+    document.getElementById('registroForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+    // Limpia los mensajes de error y de éxito
+    document.getElementById('nombreError').textContent = '';
+    document.getElementById('emailError').textContent = '';
+    document.getElementById('edadError').textContent = '';
+    document.getElementById('successMessage').style.display = 'none';
+
+    // Obtiene los valores de los campos
+    const nombreCompleto = document.getElementById('nombre').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const fechaNacimiento = document.getElementById('fechaNacimiento').value;
+
+    let formValido = true;
+
+    // --- Validación 1: Nombre y Apellido ---
+    // Expresión regular para nombres y apellidos (permite letras, espacios, guiones y tildes)
+    // Se asegura de que haya al menos dos palabras
+    const nombreRegex = //;
+    if (!nombreRegex.test(nombreCompleto)) {
+        document.getElementById('nombreError').textContent = 'El nombre y apellido deben contener solo letras y espacios. Debes ingresar al menos un nombre y un apellido.';
+        formValido = false;
+    }
+
+    // --- Validación 2: Correo Electrónico ---
+    const emailRegex = //;
+    if (!emailRegex.test(email)) {
+        document.getElementById('emailError').textContent = 'Por favor, ingresa un correo electrónico válido.';
+        formValido = false;
+    }
+
+    // --- Validación 3: Mayor de 18 años ---
+    if (fechaNacimiento) {
+        const fechaNacimientoObj = new Date(fechaNacimiento);
+        const hoy = new Date();
+        const edad = hoy.getFullYear() - fechaNacimientoObj.getFullYear();
+        const mes = hoy.getMonth() - fechaNacimientoObj.getMonth();
+        const dia = hoy.getDate() - fechaNacimientoObj.getDate();
+
+        // Ajuste de edad si el cumpleaños aún no ha pasado este año
+        if (mes < 0 || (mes === 0 && dia < 0)) {
+            edad--;
+        }
+
+        if (edad < 18) {
+            document.getElementById('edadError').textContent = 'Debes ser mayor de 18 años para registrarte.';
+            formValido = false;
+        }
+    } else {
+        document.getElementById('edadError').textContent = 'Por favor, ingresa tu fecha de nacimiento.';
+        formValido = false;
+    }
+
+    // --- Envío del formulario si es válido ---
+    if (formValido) {
+        // Aquí puedes enviar los datos a un servidor o realizar otras acciones
+        document.getElementById('successMessage').textContent = '¡Registro exitoso! 🎉';
+        document.getElementById('successMessage').style.display = 'block';
+    }
+});
+    </script>
+</body>
+</html>
