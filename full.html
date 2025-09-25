@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Validación con PHP y HTML5</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; }
+        .container { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 600px; margin: auto; }
+        h2 { text-align: center; color: #333; }
+        label { display: block; margin: 15px 0 5px; font-weight: bold; }
+        input[type="text"], input[type="tel"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        input:invalid { border-color: red; }
+        input:valid { border-color: green; }
+        button { background-color: #5cb85c; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; width: 100%; font-size: 16px; margin-top: 20px; }
+        button:hover { background-color: #4cae4c; }
+        .error { color: #FF0000; font-size: 0.9em; margin-top: 5px; display: block; }
+    </style>
+</head>
+<body>
+
+<?php
+// Define las variables y las inicializa a un valor vacío
+$telefonoErr = "";
+$telefono = "";
+$form_valido = false;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Función para sanear y limpiar los datos de entrada
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    // Validación del Teléfono
+    if (empty($_POST["telefono"])) {
+        $telefonoErr = "El teléfono es obligatorio.";
+    } else {
+        $telefono = test_input($_POST["telefono"]);
+        // Chequea si el formato del teléfono es válido (10 dígitos)
+        if (!preg_match("/^\d{9}$/", $telefono)) {
+            $telefonoErr = "Número de teléfono no válido. Debe tener 10 dígitos.";
+        }
+    }
+
+    // Si no hay errores, el formulario es válido
+    if (empty($telefonoErr)) {
+        $form_valido = true;
+    }
+}
+?>
+
+<div class="container">
+    <h2>Formulario de Registro</h2>
+
+    <?php
+    if ($form_valido) {
+        echo "<h2>Tus Datos:</h2>";
+        echo "Teléfono: " . htmlspecialchars($telefono);
+        echo "<br>";
+        echo "<br>";
+        echo "<p>¡Datos enviados correctamente!</p>";
+    } else {
+    ?>
+
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required
+               pattern="^\d{10}$"
+               title="Introduce un número de teléfono válido de 10 dígitos. Ej: 5546372817."
+               placeholder="Ej: 5546372817"
+               value="<?php echo htmlspecialchars($telefono); ?>">
+        <span class="error"><?php echo $telefonoErr;?></span>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <?php
+    }
+    ?>
+</div>
+
+</body>
+</html>
