@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+.error {color: #FF0000;}
+/* Estas reglas de estilo (input:invalid/valid) no funcionarán con tu validación PHP, ya que solo afectan a atributos HTML5 como required, pattern, etc., pero son buenas prácticas de diseño. */
+input:invalid {border-color: red;}
+input:valid {border-color: green;}
+</style>
+</head>
+<body>
+
+<?php
+// Función para sanear y limpiar los datos de entrada
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+// Define las variables y las inicializa a un valor vacío
+$telefonoErr = $nombreErr = "";
+$telefono = $nombre = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // Validación del Nombre
+    if (empty($_POST["nombre"])) {
+        $nombreErr = "El nombre es obligatorio.";
+    } else {
+        $nombre = test_input($_POST["nombre"]);
+        // Chequea si el formato del nombre es válido (permitiendo letras, acentos y espacios)
+        if (!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚ\s]+$/", $nombre)) {
+            // Se cambia el mensaje para que refleje un error de formato.
+            $nombreErr = "Solo se permiten letras y espacios."; 
+        }
+    }
+
+    // Validación del Teléfono
+    if (empty($_POST["telefono"])) {
+        $telefonoErr = "El teléfono es obligatorio.";
+    } else {
+        $telefono = test_input($_POST["telefono"]);
+        // Chequea si el formato del teléfono es válido (exactamente 10 dígitos)
+        if (!preg_match("/^\d{10}$/", $telefono)) {
+            $telefonoErr = "El teléfono debe tener 10 dígitos."; // Mensaje más claro
+        }
+    }
+}
+?>
+
+<h2>Formulario de Validación</h2>
+<p><span class="error">* Campos obligatorios</span></p>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+    Nombre: <input type="text" name="nombre" value="<?php echo htmlspecialchars($nombre); ?>">
+    <span class="error">* <?php echo $nombreErr;?></span>
+    <br><br>
+
+    Teléfono: <input type="text" name="telefono" value="<?php echo htmlspecialchars($telefono); ?>">
+    <span class="error">* <?php echo $telefonoErr;?></span>
+    <br><br>
+    <input type="submit" name="submit" value="Enviar">
+</form>
+
+<?php
+// Muestra los datos si todos los campos *incluidos en el formulario* son válidos
+// Se eliminan las referencias a $apellidoErr, $emailErr, $apellido y $email.
+if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($nombreErr) && empty($telefonoErr)) {
+    echo "<h2>Tus Datos:</h2>";
+    echo "Nombre: " . $nombre;
+    echo "<br>";
+    echo "Teléfono: " . $telefono;
+} else if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    echo "<h2>El formulario tiene errores, por favor corrígelos.</h2>";
+}
+?>
+
+</body>
+</html>
