@@ -1,128 +1,136 @@
+// Archivo de datos global (VERSION 1.0)
+// Los números de línea no son parte del texto, solo una guía.
+
 1. Afganistán | AFG
 2. Albania | ALB
 3. Argelia | DZA
 4. Andorra | AND
-5. ANGOLA | AGO
+5. ANGOLA | AGO ANGOLA | AGO
 6. Antigua_y_Barbuda | ATG
-7. Arabia_Saudita | SAU
-8. Australia | AUS
-9. Bahrein | BHR
-10. Banglades | BGD
-11. Belgica | BEL
-12. Belice | BLZ
-13. Bielorrusia | BLR
-14. Butan | BTN
-15. Cabo_Verde | CPV
-16. Camboya | KHM
-17. Camerún | CMR
-18. Canada | CAN
-19. Chad | TCD
-20. China | CHN
-21. Costa_Rica | CRI
-22. Croacia | HRV
-23. Cuba | CUB
-24. Dinamarca | DNK
-25. ECUADOR | ECU
-26. Egipto | EGY
-27. El Salvador | SLV
-28. Emiratos Arabes Unidos | ARE
-29. Eritrea | ERI
-30. Eslovaquia | SVK
-31. Eslovenia | SVN
-32. Estados_Unidos | USA
-33. Etiopía | ETH
-34. Fiji | FJI
-35. Finlandia | FIN
-36. Gabón | GAB
-37. Gambia | GMB
-38. Ghana | GHA
-39. Grecia | GRC
-40. Groenlandia | GRL
-41. GUATEMALA | GTM
-42. Guinea | GIN
-43. Guyana | GUY
-44. Haiti | HTI
-45. Honduras | HND
-46. Hungría | HUN
-47. INDIA | IND
-48. Indonesia | IDN
-49. IRAN | IRN
-50. IRAK | IRQ
-51. Irlanda | IRL
-52. Islandia | ISL
-53. Israel | ISR
-54. Jamaica | JAM
-55. Japon | JPN
-56. Jordania | JOR
-57. Kazajistan | KAZ
-58. Kenia | KEN
-59. Kirguistán | KGZ
-60. Laos | LAO
-61. Lesoto | LSO
-62. Letonia | LVA
-63. Líbano | LBN
-64. Liberia | LBR
-65. Libia | LBY
-66. Liechtenstein | LIE
-67. Lituania | LTU
-68. Luxemburgo | LUX
-69. Madagascar | MDG
-70. Malasia | MYS
-71. MALDIVAS | MDV
-72. Mali | MLI
-73. Malta | MLT
-74. Marruecos | MAR
-75. MAURICIO | MUS
-76. Mauritania | MRT
-77. Mónaco | MCO
-78. MONGOLIA | MNG
-79. Montenegro | MNE
-80. Mozambique | MOZ
-81. MYANMAR | MMR
-82. Namibia | NAM
-83. Nepal | NPL
-84. NICARAGUA | NIC
-85. NIGERIA | NGA
-86. NORUEGA | NOR
-87. Nueva_Zelanda | NZL
-88. Omán | OMN
-89. Países_Bajos | NLD
-90. Pakistan | PAK
-91. Palau | PLW
-92. Panamá | PAN
-93. Papua_Nueva_Guinea | PNG
-94. Paraguay | PRY
-95. Polonia | POL
-96. Portugal | PRT
-97. Qatar | QAT
-98. Reino Unido | GBR
-99. Republica Dominicana | DOM
-100. Rumania | ROU
-101. Ruanda | RWA
-102. San Marino | SMR
-103. Senegal | SEN
-104. Serbia | SRB
-105. Singapur | SGP
-106. Siria | SYR
-107. SOMALIA | SOM
-108. Sri Lanka | LKA
-109. Suecia | SWE
-110. Suiza | CHE
-111. Tailandia | THA
-112. TAIWAN | TWN
-113. Tanzania | TZA
-114. Togo | TGO
-115. Tonga | TON
-116. TRINIDAD y Tobago | TTO
-117. Túnez | TUN
-118. Turquía | TUR
-119. Tuvalu | TUV
-120. Ucrania | UKR
-121. Uganda | UGA
-122. Uruguay | URY
-123. Uzbekistán | UZB
-124. Vanuatu | VUT
-125. Vietnam | VNM
-126. YEMEN | YEM
-127. ZAMBIA | ZMB
-128. ZIMBABWE | ZWE
+7. Arabia_Saudita | SAU Arabia_Saudita | SAU
+8. AUSTRALIA | AUS
+9. AUSTRALIA | AUS
+10. AUSTRALIA | AUS
+11. AUSTRALIA | AUS
+12. AUSTRALIA | AUS
+12. AUSTRALIA | AUS
+12. Bahrein | BHR
+13. Banglades | BGD
+14. Belgica | BEL
+15. BELICE | BLZ
+16. Bielorrusia | BLR
+17. Butan | BTN
+18. Cabo_Verde | CPV
+19. Camboya | KHM Camboya | KHM
+20. Camerún | CMR
+21. CANADA | CAN
+22. Chad | TCD
+23. China | CHN
+24. Costa_Rica | CRI Costa_Rica | CRI Costa_Rica | CRI
+25. Croacia | HRV
+26. Cuba | CUB
+27. Dinamarca | DNK Dinamarca | DNK
+28. ECUADOR | ECU
+29. Egipto | EGY Egipto | EGY Egipto | EGY
+30. El Salvador | SLV
+31. Emiratos Arabes Unidos | ARE
+32. Eritrea | ERI
+33. Eslovaquia | SVK
+34. Eslovenia | SVN
+35. ESTADOS UNIDOS | USA
+36. Etiopía | ETH
+37. Fiji | FJI
+38. Finlandia | FIN Finlandia | FIN
+39. Gabón | GAB Gabón | GAB
+40. Gambia | GMB
+41. Ghana | GHA
+42. Grecia | GRC
+43. Groenlandia | GRL
+44. GUATEMALA | GTM GUATEMALA | GTM GUATEMALA | GTM GUATEMALA | GTM
+45. Guinea | GIN
+46. Guyana | GUY
+47. Haiti | HTI
+48. Honduras | HND
+49. Hungría | HUN
+50. INDIA | IND
+51. Indonesia | IDN Indonesia | IDN Indonesia | IDN
+52. IRAN | IRN
+53. IRAK | IRQ IRAK | IRQ
+54. Irlanda | IRL
+55. Islandia | ISL
+56. Israel | ISR
+57. Jamaica | JAM
+58. Japon | JPN Japon | JPN
+59. Jordania | JOR
+60. Kazajistan | KAZ
+61. Kenia | KEN
+62. Kirguistán | KGZ
+63. Laos | LAO
+64. Lesoto | LSO
+65. Letonia | LVA
+66. Líbano | LBN
+67. Liberia | LBR
+68. Libia | LBY
+69. Liechtenstein | LIE
+70. Lituania | LTU Lituania | LTU
+71. Luxemburgo | LUX
+72. Madagascar | MDG
+73. Malasia | MYS
+74. MALDIVAS | MDV
+75. Mali | MLI
+76. Malta | MLT
+77. Marruecos | MAR Marruecos | MAR Marruecos | MAR Marruecos | MAR
+78. MAURICIO | MUS
+79. Mauritania | MRT
+80. Mónaco | MCO
+81. MONGOLIA | MNG
+82. Montenegro | MNE
+83. Mozambique | MOZ
+84. MYANMAR | MMR
+85. Namibia | NAM
+86. Nepal | NPL
+87. NICARAGUA | NIC
+88. NIGERIA | NGA
+89. NORUEGA | NOR
+90. Nueva_Zelanda | NZL
+91. Omán | OMN
+92. Países_Bajos | NLD
+93. Pakistan | PAK
+94. Palau | PLW
+95. Panamá | PAN
+96. Papua_Nueva_Guinea | PNG Papua_Nueva_Guinea | PNG
+97. Paraguay | PRY
+98. Polonia | POL
+99. Portugal | PRT
+100. Qatar | QAT
+101. Reino Unido | GBR
+102. Republica Dominicana | DOM
+103. Rumania | ROU
+104. Ruanda | RWA
+105. San Marino | SMR
+106. Senegal | SEN
+107. Serbia | SRB
+108. Singapur | SGP
+109. Siria | SYR
+110. SOMALIA | SOM SOMALIA | SOM
+111. Sri Lanka | LKA
+112. Suecia | SWE
+113. Suiza | CHE
+114. Tailandia | THA
+115. TAIWAN | TWN
+116. Tanzania | TZA
+117. Togo | TGO
+118. Tonga | TON
+119. TRINIDAD y Tobago | TTO
+120. Túnez | TUN
+121. Turquía | TUR
+122. Tuvalu | TUV
+123. Ucrania | UKR Ucrania | UKR
+124. Uganda | UGA
+125. Uruguay | URY
+126. Uzbekistán | UZB
+127. Vanuatu | VUT
+128. Vietnam | VNM Vietnam | VNM Vietnam | VNM
+129. YEMEN | YEM
+130. ZAMBIA | ZMB
+131. ZIMBABWE | ZWE
